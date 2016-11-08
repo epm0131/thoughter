@@ -1,0 +1,26 @@
+{
+  "name": "thoughter",
+  "version": "1.0.0",
+  "description": "This is an assignment assigned by TIY.  We have to build for a new micro-blogging site.  Which has the same functionality as Twitter.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epm0131/thoughter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epm0131/thoughter/issues"
+  },
+  "homepage": "https://github.com/epm0131/thoughter#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2"
+  }
+}
