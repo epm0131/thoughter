@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Thoughter</title>
 
-    <link rel="stylesheet" href='/css/normalize.css' type='text/css'>
+    <link rel="stylesheet" href='css/normalize.css' type='text/css'>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href='/css/style.css' type='text/css'>
+    <link rel="stylesheet" href='css/style.css' type='text/css'>
 
   </head>
   <body>
@@ -27,15 +27,17 @@
     </main>
     <main id='new-thought'>
       <h3>New Thought</h3>
-      <aside>
-        <label>What are you thinking about? Share it with the world!</label>
-        <input id='yourthought'type='text' placeholder='Your thought...'>
+      <form>
+      <aside class='form-group'>
+        <label for='yourthought'>What are you thinking about? Share it with the world!</label>
+        <input class='form-control' id='yourthought'type='text' placeholder='Your thought...'>
       </aside>
       <aside>
-        <input type="button" name="Post Thought" value='Send thought'>
+        <input class='btn btn-primary' type="button" name="Post Thought" value='Send thought'>
       </aside>
-
+      </form>
     </main>
-
+    <script src='../node_modules/jquery/dist/jquery.js'></script>
+    <script src='js/thoughter.js'></script>  
   </body>
 </html>
