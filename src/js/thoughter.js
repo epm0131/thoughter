@@ -5,8 +5,16 @@
 
   $(window)
       .on('hashchange', function (eventObj) {
+        $('main').hide();
 
-        console.log('hash changed', window.location);
+        var currentHash = window.location.hash;
+        $(currentHash).show();
 
-      } )
+
+
+
+
+
+
+      } );
 }());
