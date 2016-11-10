@@ -19,13 +19,21 @@ module.exports = function(grunt) {
         }//files
       }//test
     },//jshint
+    sass: {
+      stylesOfProject: {
+        files: {
+          'build/css/style.css': 'src/sass/main.scss'
+        }
+      }
+    },
 
 
 
   });//grunt.initConfig{}
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask( 'default', ['jshint'] );
+  grunt.registerTask( 'default', ['jshint', 'sass', ] );
 
 };//module.exports {}
