@@ -5,11 +5,11 @@
 
   describe('What you are thinking', function() {
     it('should know that the namespace exists', function() {
-      expect(window.thought).to.be.a('object');
+      expect(window.thought).to.be.an('object');
 
     describe('Search peoples thoughts', function() {
-      it('should make an ajax call and grab a thought', function(doneCallback) {
-        var xhrPromise = window.thought.searchThoughts();
+      it('should make an ajax call and grab a thought from the server', function(doneCallback) {
+        var xhrPromise = window.thought.searchThoughts(); //this confirms that a promise did in fact come back.
         expect(xhrPromise).to.be.an('object');
         expect(xhrPromise.done).to.be.a('function');
         expect(xhrPromise.fail).to.be.a('function');
@@ -21,12 +21,12 @@
           })
           .fail(function handleFailure(xhrPromise) {
             console.log(xhrPromise);
-            doneCallback();
+            doneCallback('Something went very wrong');
           })
    });//it make an ajax call
    });//describe thoughts
 
-   describe('adds thoughts to a page', function() {
+   describe('should add the collection of thoughts to the page', function() {
      it('should add thoughts to the page when given an array', function(){
        window.thought.addThoughtsToPage([
          {id: 1},
