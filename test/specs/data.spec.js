@@ -22,21 +22,21 @@
           .fail(function handleFailure(xhrPromise) {
             console.log(xhrPromise);
             doneCallback('Something went very wrong');
-          })
+          });
    });//it make an ajax call
    });//describe thoughts
 
-   describe('should add the collection of thoughts to the page', function() {
-     it('should add thoughts to the page when given an array', function(){
-       window.thought.addThoughtsToPage([
-         {id: 1},
-         {id: 2},
-       ]);
-
-       var thoughtLi =$('ul.list li')
-       expect(thought.length).to.equal(1);
-     });
-   })
+  //  describe('should add the collection of thoughts to the page', function() {
+  //    it('should add thoughts to the page when given an array', function(){
+  //      window.thought.addThoughtsToPage([
+  //        {id: 1},
+  //        {id: 2},
+  //      ]);
+   //
+  //      var thoughtLi =$('ul.list li');
+  //      expect(thought.length).to.equal(1);
+  //    });
+  //  })
  });//it namespace
  });//describe (main suite)
 }()); //iife

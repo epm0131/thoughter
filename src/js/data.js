@@ -14,9 +14,9 @@
       method: 'GET',
       dataType: 'json',
       data: { foo: 'bar '} //example - goes into the body
-    })
+    });
 
- };
+ }
 
 
 
