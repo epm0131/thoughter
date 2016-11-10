@@ -81,7 +81,7 @@ module.exports = function(grunt) {
       }//all
     }//mocha
 
-  });//grunt.initConfig{}
+  });//grunt.initConfig
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-sass');
@@ -94,4 +94,4 @@ module.exports = function(grunt) {
   grunt.registerTask( 'test', [ 'jshint', 'connect', 'mocha' ] );
   grunt.registerTask( 'default', [ 'clean', 'test', 'sass', 'copy', 'concat' ] );
 
-};//module.exports {}
+};//module.exports
