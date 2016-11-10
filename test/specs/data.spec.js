@@ -26,17 +26,19 @@
    });//it make an ajax call
    });//describe thoughts
 
-  //  describe('should add the collection of thoughts to the page', function() {
-  //    it('should add thoughts to the page when given an array', function(){
-  //      window.thought.addThoughtsToPage([
-  //        {id: 1},
-  //        {id: 2},
-  //      ]);
-   //
-  //      var thoughtLi =$('ul.list li');
-  //      expect(thought.length).to.equal(1);
-  //    });
-  //  })
+   describe('should add the collection of thoughts to the page', function() {
+
+     it('should add thoughts to the page when given an array', function(){
+       window.thought.addThoughtsToPage([
+         {id: 1, name: 'foobar'},
+         {id: 2, name: 'batbaz'},
+       ]);
+
+       var thoughtLi =$('ul.list li');
+       expect(thoughtLi.length).to.equal(2);
+     });
+     
+   })//describe collection
  });//it namespace
  });//describe (main suite)
 }()); //iife
