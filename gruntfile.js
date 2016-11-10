@@ -75,7 +75,7 @@ module.exports = function(grunt) {
       all: {
         options: {
           urls: [
-            'http://localhost8080/test/thoughter.html'
+            'http://localhost:8080/test/thoughter.html'
           ]
         }//options
       }//all
