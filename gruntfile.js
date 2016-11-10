@@ -21,9 +21,11 @@ module.exports = function(grunt) {
     },//jshint
 
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask( 'jshint' );
-    
   });//grunt.initConfig{}
+
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+
+  grunt.registerTask( 'default', ['jshint'] );
+
 };//module.exports {}
