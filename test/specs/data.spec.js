@@ -33,12 +33,15 @@
          {id: 1, name: 'foobar'},
          {id: 2, name: 'batbaz'},
        ]);
-
        var thoughtLi =$('ul.list li');
        expect(thoughtLi.length).to.equal(2);
-     });
-     
-   })//describe collection
+     });//it - given array
+     it('should not add thoughts if given an empty array', function() {
+       window.thought.addReposToPage([]);
+       var thoughtLi =$('ul.list li');
+       expect(thoughtLi.lenght).to.equal(0);
+     });//it empty array
+   });//describe collection
  });//it namespace
  });//describe (main suite)
 }()); //iife
