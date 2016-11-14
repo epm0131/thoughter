@@ -4,21 +4,60 @@
   window.thought = window.thought || {};
 
   window.thought.searchThoughts = searchThoughts;
+
   /**
    * Use this function to pull thoughts from the API
+   * @param  {Number} thoughts number of thoughts to get from server - defaults to 10
    * @return {Promise}  the ajax call promise.
    */
-  function searchThoughts() {
+
+  function searchThoughts(thoughts) {
+    if(typeof(thoughts) !== 'number' || thoughts < 0) {
+      thoughts = 10;
+    }//if
+
     return $.ajax({
       url: 'https://thoughter.herokuapp.com/api/Thoughts',
       method: 'GET',
       dataType: 'json',
-      data: { foo: 'bar '} //example - goes into the body
+    })
+
+    .done(function handleSuccess(thoughts) {
+      console.log(thoughts);
     });
 
- }
+
+ }//searchThoughts
 
 
+
+
+
+
+}());
+
+(function() {
+  'use strict';
+
+  window.thought = window.thought || {};
+  
+  window.thought.listThought = listThought;
+
+  function listThought(thoughts) {
+    if(!Array.isArray(thoughts)) {
+      return;
+    }
+
+    thoughts.forEach(function appendThoughts(thought){
+      $('.list')
+        .append(
+          '<li>' +
+          thought.createTime + ' ' +
+          thought.content +
+          '</li>'
+        );
+    });
+  }//listThought
 
 
 
@@ -36,6 +75,14 @@
         var currentHash = window.location.hash;
         $(currentHash).show();
       });
+
+    if(window.location.hash === '#recent-thoughts') {
+      window.thought.searchThoughts(20)
+        .done(function handleSuccess(thoughtData) {
+          window.thought.listThought(thoughtData);
+        });
+    }
+
 }());
 
 (function() {
@@ -45,11 +92,20 @@ window.thought = window.thought || {};
 
 window.thought.addThoughtsToPage = addThoughtsToPage;
 
+
+
 function addThoughtsToPage(thoughts) {
   thoughts.forEach(function addLi(thought) {
-    $('ul.list').append('<li>' + thought.createTime + thought.content + '</li>');
+    $('ul.list')
+    .append(
+      '<li>' +
+      thought.createTime +
+      thought.content +
+      '</li>'
+    );
   });
-}
+}//addThoughtsToPage
+
 
 
 

@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     connect: {
       testing: {
         options: {
-          port: 8080,
+          port: 8888,
           base: '.'
         }//options
       }//testing
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
       all: {
         options: {
           urls: [
-            'http://localhost:8080/test/thoughter.html'
+            'http://localhost:8888/test/thoughter.html'
           ]
         }//options
       }//all
