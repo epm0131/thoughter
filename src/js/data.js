@@ -4,6 +4,7 @@
   window.thought = window.thought || {};
 
   window.thought.searchThoughts = searchThoughts;
+  window.thought.addNewThought = addNewThought;
 
   /**
    * Use this function to pull thoughts from the API
@@ -28,8 +29,34 @@
 
 
  }//searchThoughts
+/**
+ * A new thought will post to the API
+ * @param {String} newThought The message can consist of a string or a number
+ * @return {Promise}     Promise from Ajax call
+*/
+function addNewThought(newThought) {
+  if(typeof(newThought) !== 'string') {
+    return;
+  }
 
-
+  return $.ajax({
+       url: 'https://thoughter.herokuapp.com/api/Thoughts',
+       method: 'POST',
+       dataType: 'json',
+       data: JSON.stringify({
+         'content': newThought
+       }),
+       headers: {
+         'Content-Type': 'application/json'
+       }
+   })
+   .done(function handleSuccess(newThought) {
+     console.log(newThought);
+   })
+   .fail(function handleFailure(xhr) {
+     console.log(xhr);
+   });
+}//addNewThought
 
 
 
